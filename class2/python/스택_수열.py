@@ -33,4 +33,4 @@ if  possible:
     print("\n".join(result))
 else:
     print("NO")
-
+    
