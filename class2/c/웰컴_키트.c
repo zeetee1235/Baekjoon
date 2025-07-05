@@ -8,9 +8,9 @@ int main(int argc, char const *argv[])
     scanf("%d %d %d %d %d %d", &size[0], &size[1], &size[2], &size[3], &size[4], &size[5]);
     int t,p;
     scanf("%d %d", &t, &p);
-    int min = 0, max = 0; // min을 0으로 초기화
+    int min = 0, max = 0; 
     
-    for (int i = 0; i < 6; i++) { // 6개 모두 반복
+    for (int i = 0; i < 6; i++) { 
         if (size[i] % t == 0) {
             min += size[i] / t;
         } 
