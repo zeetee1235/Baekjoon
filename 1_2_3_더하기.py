@@ -1,5 +1,7 @@
 import sys
 
 x = sys.stdin.read().splitlines()
-n = int(x[0])
+t = int(x[0])
+x.pop(0)
 
+x = [int(i) for i in x]
