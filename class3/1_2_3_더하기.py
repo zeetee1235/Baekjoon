@@ -5,7 +5,6 @@ t = int(x[0])
 x.pop(0)
 x = [int(i) for i in x]
 
-# 1, 2, 3의 합으로 n을 만드는 경우의 수 DP
 max_n = max(x)
 dp = [0] * (max_n + 1)
 dp[0] = 1
