@@ -13,6 +13,10 @@ dist[n] = 0
 
 if n == k:
     print(0)
+    sys.exit(0)
+if n > k:
+    print(n - k)
+    sys.exit(0)
 
 while dq:
     x = dq.popleft()
@@ -21,5 +25,5 @@ while dq:
             dist[i] = dist[x] + 1
             if i  == k:
                 print(dist[i])
-                exit()
+                sys.exit(0)
             dq.append(i)

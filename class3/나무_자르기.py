@@ -17,7 +17,7 @@ def count_trees(arr, mid):
 left = 0
 right = max(trees)
 result = 0
-while left < right:
+while left <= right:
     mid = (left + right) // 2
     cnt = count_trees(trees, mid)
     if cnt >= m:
