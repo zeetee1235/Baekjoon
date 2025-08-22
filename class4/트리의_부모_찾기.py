@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(100000)
+sys.setrecursionlimit(10**6)
 x = sys.stdin.read().splitlines()
 n = int(x.pop(0))
 x = [list(map(int, i.split())) for i in x]
@@ -27,6 +27,4 @@ visited = [False] * (n + 1)
 parents = [0] * (n + 1)
 dfs(graph, 1, visited)
 
-parents.pop(0)
-parents.pop(0)
-print("\n".join(map(str, parents)))
+print("\n".join(map(str, parents[2:])))

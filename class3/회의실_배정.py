@@ -5,7 +5,7 @@ x = [list(map(int, i.split())) for i in x]
 n = int(x[0][0])
 x.pop(0)
 
-x.sort(key=lambda x: (x[1]))
+x.sort(key=lambda x: (x[1], x[0]))
 
 count = 0
 last_end_time = 0

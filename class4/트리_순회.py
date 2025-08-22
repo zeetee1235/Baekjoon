@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**5)
 x = sys.stdin.read().splitlines()
 N = int(x[0])
 x.pop(0)

@@ -11,5 +11,4 @@ for i in range(0, N -1):
         dp[i + 1][j] = max(dp[i + 1][j], dp[i][j] + x[i + 1][j])
         dp[i + 1][j + 1] = max(dp[i + 1][j + 1], dp[i][j] + x[i + 1][j + 1])
 
-
 print(max(dp[-1]))
