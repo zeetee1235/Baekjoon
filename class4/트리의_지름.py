@@ -14,7 +14,6 @@ for edge in x:
 
 
 def dfs(graph, node, dist, visited):
-    global parents
     max_dist = dist
     far_node = node
     visited[node] = True
