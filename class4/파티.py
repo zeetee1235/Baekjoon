@@ -1,4 +1,3 @@
-
 import sys
 import heapq
 from collections import defaultdict
@@ -28,9 +27,8 @@ def dijkstra(start, graph):
                 heapq.heappush(q, (nd, nxt))
     return dist
 
-# x에서 각 마을로 가는 최단거리
 to_home = dijkstra(x, graph)
-# 각 마을에서 x로 가는 최단거리 (그래프 뒤집어서 x에서 출발)
+
 from_home = dijkstra(x, reverse_graph)
 
 max_time = 0
