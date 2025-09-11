@@ -3,8 +3,7 @@ mod = 1000000
 # 피사노 주기 10^k 일때 (k > 2) 15 * 10 ^(k - 1)
 period = 1500000
 
-def fibonacci_list(m):
-    # return list of Fibonacci numbers modulo mod up to index m
+def fibonacci(m):
     if m == 0:
         return [0]
     dp = [0] * (m + 1)
@@ -14,7 +13,7 @@ def fibonacci_list(m):
         dp[i] = (dp[i - 1] + dp[i - 2]) % mod
     return dp
 
-arr = fibonacci_list(period)
+arr = fibonacci(period)
 print(arr[n % period])
 
 
