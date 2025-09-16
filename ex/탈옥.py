@@ -72,22 +72,18 @@ def solve():
     raw = [list(row) for row in x[:H]]
     x = x[H:]
 
-    # pad grid with '.' to represent outside
     H2, W2 = H + 2, W + 2
     grid = [['.'] * W2 for _ in range(H2)]
     for i in range(H):
         for j in range(W):
             grid[i+1][j+1] = raw[i][j]
 
-    # find prisoners in padded grid
-    (p1x, p1y), (p2x, p2y) = find_prison(grid, H2, W2)
+    (sx, sy), (ex, ey) = find_prison(grid, H2, W2)
 
     cost_grid = record_cost(grid, H2, W2)
-
-    # run dijkstra from outside (0,0) and both prisoners
     dist_out = dijkstra(cost_grid, 0, 0, H2, W2)
-    dist1 = dijkstra(cost_grid, p1x, p1y, H2, W2)
-    dist2 = dijkstra(cost_grid, p2x, p2y, H2, W2)
+    dist1 = dijkstra(cost_grid, sx, sy, H2, W2)
+    dist2 = dijkstra(cost_grid, ex, ey, H2, W2)
 
     ans = INF
     for i in range(H2):
@@ -95,7 +91,6 @@ def solve():
             dsum = dist_out[i][j] + dist1[i][j] + dist2[i][j]
             if dsum >= INF:
                 continue
-            # if current cell is a door '#', opening counted three times -> subtract 2
             if grid[i][j] == '#':
                 dsum -= 2
             ans = min(ans, dsum)
